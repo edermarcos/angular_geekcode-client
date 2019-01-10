@@ -1,0 +1,166 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+form, input, select, textarea {
+  width: 100%;
+}
+
+form {
+  input, select, textarea {
+    border: none;
+    padding-left: 1rem;
+    border-radius: 0;
+    margin-bottom: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input {
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    padding-top: 0;
+    padding-bottom: $mh-input / 8;
+    font-size: 0.93rem;
+
+    &:focus {
+      box-shadow: $accent-400 0 2px 0;
+    }
+
+    &:focus,
+    &.active {
+      + label {
+        font-size: $mh-input / 4.5;
+        padding-top: $mh-input / 8;
+      }
+    }
+  }
+
+  textarea {
+    resize: none;
+    box-shadow: none;
+  }
+
+  .rs-group {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    height: $mh-input;
+    margin-bottom: 1rem;
+    background: $gray-50;
+    box-shadow: $gray-400 0 2px 0;
+
+    &.invalid {
+      box-shadow: $alert-700 0 2px 0;
+    }
+
+    &.valid {
+      box-shadow: $success-700 0 2px 0;
+    }
+
+    > label {
+      @include transition(all 0.2s ease);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      padding: ($mh-input - 1rem - ($mh-input / 8)) / 2 0 0 1rem;
+      font-size: 1rem;
+      color: $gray-700;
+    }
+  }
+
+  .rs-group-textarea {
+    width: 100%;
+    position: relative;
+    margin-bottom: 1rem;
+    background: $gray-50;
+    padding-top: 1.5rem;
+
+    > label {
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      color: $gray-700;
+    }
+  }
+
+  .rs-group-checkbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 1.5rem;
+    min-width: 96px;
+    min-height: 2rem;
+    margin: 0.5rem 1rem 0.5rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+
+      &:checked {
+        ~.checkmark {
+          background-color: $accent-400;
+
+          &:after {
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      height: 16px;
+      width: 16px;
+      background-color: $gray-300;
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 6px;
+        top: 2px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+
+    &:hover {
+      input {
+        ~.checkmark {
+          background-color: $gray-300;
+        }
+
+        &:checked {
+          ~.checkmark {
+            background-color: $accent-400;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+/* ==================
+		Reset
+==================== */
+@import '/assets/base/reset';
+
+/* ==================
+	  Bootstrap
+==================== */
+@import '~bootstrap/scss/bootstrap';
+
+/* ==================
+	  Variables
+==================== */
+@import 'assets/utils/variables';
+
+/* ==================
+       Mixins
+==================== */
+@import 'assets/utils/mixins';
+
+/* ==================
+    Simplebar
+==================== */
+@import 'assets/vendors/vendors';
+
+/* ==================
+	  Components
+==================== */
+@import 'assets/components/components';

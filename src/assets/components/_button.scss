@@ -1,0 +1,136 @@
+@import '../utils/utils';
+
+/* ==================
+        Button
+==================== */
+
+button[rs-button] {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.8rem;
+  color: $accent-400;
+  cursor: pointer;
+  font-family: $font-ui;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.75px;
+  padding: 0.6rem 1.5rem;
+  @include align-items(center);
+  @include disable-highlight;
+  @include inline-flexbox;
+  @include lys-transition(background-color);
+
+  &:hover {
+    background-color: $accent-100;
+    color: $accent-700;
+  }
+
+  &:active {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.16);
+  }
+
+  &[disabled] {
+    background-color: $gray-300;
+    box-shadow: none;
+    color: $gray-700;
+  }
+
+  &[full] {
+    width: 100%;
+    @include align-items(center);
+    @include flexbox();
+    @include justify-content(center);
+    @include transition(
+      opacity $transition-time $transition-ease,
+      background-color $transition-time $transition-ease
+    );
+  }
+
+  &[light] {
+    padding: 0;
+    color: $disabled--light;
+    @include lys-transition(color);
+
+    &:hover {
+      background-color: transparent;
+      color: $normal--light;
+    }
+  }
+
+  &[error] {
+    color: $alert-400;
+    &:hover {
+       background-color: $alert-100;
+       color: $alert-700;
+    }
+  }
+}
+
+button[rs-button][raised] {
+  background-color: $accent-400;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.16);
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+
+  &:hover {
+    background-color: $accent-700;
+    color: #fff;
+  }
+
+  &:active {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  &[disabled] {
+    background-color: $gray-300;
+    box-shadow: none;
+    color: $gray-700;
+  }
+
+  &[error] {
+    background-color: $alert-400;
+    &:hover {
+      background-color: $alert-700;
+    }
+  }
+}
+
+button[rs-button][outlined] {
+  border: 1px solid $accent-400;
+  padding: 0.6rem 1.5rem;
+
+  &:hover {
+    border-color: $accent-700;
+    @include lys-transition(border-color);
+  }
+
+  &[disabled] {
+    background-color: transparent;
+    border: 1px solid $gray-300;
+    color: $gray-600;
+
+    &:active {
+      text-shadow: none;
+    }
+  }
+
+  &[light] {
+    border: 1px solid $ui-50;
+    color: $ui-50;
+    @include lys-transition(all);
+
+    &:hover {
+      background-color: $ui-50;
+      color: $accent-400;
+    }
+  }
+
+  &[error] {
+   border-color: $alert-400;
+   &:hover {
+      border-color: $alert-700;
+   }
+  }
+}

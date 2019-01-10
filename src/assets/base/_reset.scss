@@ -1,0 +1,27 @@
+﻿@import '../utils/variables';
+
+// Bootstrap's variables
+$enable-rounded:            false;
+$body-bg:                   $ui-100;
+$body-color:                $normal;
+$font-family-base:          $font-ui;
+$primary:                   $accent-400;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-ui-header !important;
+  font-weight: bold !important;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+body {
+	line-height: normal;
+}

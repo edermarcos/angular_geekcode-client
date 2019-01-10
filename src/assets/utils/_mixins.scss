@@ -1,0 +1,360 @@
+/* ==================
+	  Transforms
+==================== */
+
+@mixin transform($args...) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+@mixin transform-origin($args) {
+  -webkit-transform-origin: $args;
+  transform-origin: $args;
+}
+
+/* ==================
+	  Transitions
+==================== */
+
+$transition-time: 0.25s;
+$transition-ease: ease-out;
+$easeQuintOut: cubic-bezier(0.23, 1, 0.32, 1);
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin list-item-transition() {
+  -webkit-transition: background-color $transition-time $transition-ease,
+    color $transition-time $transition-ease;
+  -ms-transition: background-color $transition-time $transition-ease,
+    color $transition-time $transition-ease;
+  -o-transition: background-color $transition-time $transition-ease,
+    color $transition-time $transition-ease;
+  transition: background-color $transition-time $transition-ease,
+    color $transition-time $transition-ease;
+}
+
+@mixin lys-transition($args) {
+  -webkit-transition: $args $transition-time $transition-ease;
+  -ms-transition: $args $transition-time $transition-ease;
+  -o-transition: $args $transition-time $transition-ease;
+  transition: $args $transition-time $transition-ease;
+}
+
+@mixin quint-transition($args) {
+  -webkit-transition: $args 0.3s $easeQuintOut;
+  -ms-transition: $args 0.3s $easeQuintOut;
+  -o-transition: $args 0.3s $easeQuintOut;
+  transition: $args 0.3s $easeQuintOut;
+}
+
+@mixin transition-delay($args) {
+  -webkit-transition-delay: $args;
+  transition-delay: $args;
+}
+
+/* ==================
+	  Animations
+==================== */
+
+@mixin animation($args...) {
+  -webkit-animation: $args;
+  -moz-animation: $args;
+  -ms-animation: $args;
+  -o-animation: $args;
+  animation: $args;
+}
+
+@mixin animation-delay($args) {
+   -webkit-animation-delay: $args;
+   -moz-animation-delay: $args;
+   -ms-animation-delay: $args;
+   -o-animation-delay: $args;
+   animation-delay: $args;
+ }
+
+ @mixin animation-fill-mode($args) {
+   -webkit-animation-fill-mode: $args;
+   -moz-animation-fill-mode: $args;
+   -ms-animation-fill-mode: $args;
+   -o-animation-fill-mode: $args;
+   animation-fill-mode: $args;
+ }
+
+@mixin keyframes($animation_name) {
+  @-webkit-keyframes #{$animation_name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation_name} {
+    @content;
+  }
+  @-o-keyframes #{$animation_name} {
+    @content;
+  }
+  @keyframes #{$animation_name} {
+    @content;
+  }
+}
+
+/* ==================
+	 Placeholder
+==================== */
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+/* ==================
+	Pseudo Elements
+==================== */
+
+%pseudos {
+  content: "";
+  position: absolute;
+}
+
+@mixin p-el($el, $el-width, $el-height) {
+  @if $el == "before" or $el == "after" {
+    &:#{$el} {
+      @extend %pseudos;
+      width: $el-width;
+      height: $el-height;
+      @content;
+    }
+  } @else {
+    @error "`#{$el}` is not a valid pseudo-element.";
+  }
+}
+
+/* ==================
+	 Retina Image
+==================== */
+
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+    (-o-min-device-pixel-ratio: 2.6/2),
+    (-webkit-min-device-pixel-ratio: 1.3),
+    (min-device-pixel-ratio: 1.3),
+    (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+/* ==================
+	  Box Shadow
+==================== */
+
+@mixin box-shadow {
+  box-shadow: 4px 4px 4px -2px rgba(0, 0, 0, 0.08);
+}
+
+@mixin box-shadow-expanded($args...) {
+  box-shadow: 7px 7px 10px 0 rgba(50, 59, 79, 0.05), $args;
+}
+
+/* ==================
+	Flickering Fix
+==================== */
+
+@mixin flickering-fix {
+  -webkit-backface-visibility: hidden;
+}
+
+/* ==================
+   Disable Highlight
+==================== */
+
+@mixin disable-highlight {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ==================
+   CSS Columns
+==================== */
+
+@mixin columns($args...) {
+  -webkit-columns: $args;
+  -moz-columns: $args;
+  columns: $args;
+}
+
+@mixin column-gap($args...) {
+  -webkit-column-gap: $args;
+  -moz-column-gap: $args;
+  column-gap: $args;
+}
+
+@mixin column-fill($args...) {
+  -webkit-column-fill: $args;
+  -moz-column-fill: $args;
+  column-fill: $args;
+}
+
+/* ==================
+   Flexbox
+==================== */
+
+// Flexbox display
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// Flexbox inline display
+@mixin inline-flexbox() {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+  -moz-flex-flow: $flow;
+  -ms-flex-flow: $flow;
+  flex-flow: $flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+  -webkit-flex-grow: $grow;
+  -moz-flex-grow: $grow;
+  -ms-flex-grow: $grow;
+  flex-grow: $grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+@mixin flex-shrink($shrink) {
+  -webkit-flex-shrink: $shrink;
+  -moz-flex-shrink: $shrink;
+  -ms-flex-shrink: $shrink;
+  flex-shrink: $shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width>
+@mixin flex-basis($width) {
+  -webkit-flex-basis: $width;
+  -moz-flex-basis: $width;
+  -ms-flex-basis: $width;
+  flex-basis: $width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+  -ms-justify-content: $justify;
+  justify-content: $justify;
+  -ms-flex-pack: $justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+  -moz-align-content: $align;
+  -ms-align-content: $align;
+  align-content: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+  -moz-align-items: $align;
+  -ms-align-items: $align;
+  align-items: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+  -moz-align-self: $align;
+  -ms-align-self: $align;
+  align-self: $align;
+}
