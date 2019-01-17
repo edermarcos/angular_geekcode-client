@@ -1,0 +1,72 @@
+@import '../../assets/utils/variables';
+@import '../../assets/utils/mixins';
+
+.rs-index {
+
+  &_header,
+  &_main {
+    margin-bottom: 1rem;
+  }
+
+  &_header {
+    @include box-shadow();
+    background: white;
+
+    > .container-fluid {
+      border-bottom: 1px solid rgba($gray-300, 0.5);
+    }
+
+    &_searchbar,
+    &_profile {
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(flex-end);
+      height: 100%;
+    }
+
+    &_searchbar {
+      input {
+        font-size: 0.8rem;
+      }
+    }
+
+    &_profile {
+      i {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      > img {
+        @include image-round(2rem, 0);
+      }
+    }
+
+    &_menu {
+      .nav-item {
+        margin-right: 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: $emphasis;
+
+        &:hover {
+          cursor: pointer;
+
+          i,
+          a {
+            color: $ui-primary;
+          }
+        }
+      }
+    }
+  }
+  &_main { }
+  &_footer {}
+}

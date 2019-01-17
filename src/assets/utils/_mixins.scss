@@ -1,4 +1,45 @@
 /* ==================
+	 Utils
+==================== */
+@mixin image-round($size, $mr) {
+  border-radius: 50%;
+  max-height: $size;
+  height: $size;
+  max-width: $size;
+  width: $size;
+  margin-right: $mr;
+}
+
+@mixin limit-lines($line-height, $lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: $line-height;
+  max-height: calc(#{$lines} * #{$line-height});
+}
+
+@mixin one-line($line-height) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: $line-height;
+  max-height: $line-height;
+}
+
+@mixin bg-size($size) {
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+}
+
+@mixin static-width($size) {
+  width: $size;
+  max-width: $size;
+  min-width: $size;
+  overflow: hidden;
+}
+
+/* ==================
 	  Transforms
 ==================== */
 
@@ -33,13 +74,13 @@ $easeQuintOut: cubic-bezier(0.23, 1, 0.32, 1);
 
 @mixin list-item-transition() {
   -webkit-transition: background-color $transition-time $transition-ease,
-    color $transition-time $transition-ease;
+  color $transition-time $transition-ease;
   -ms-transition: background-color $transition-time $transition-ease,
-    color $transition-time $transition-ease;
+  color $transition-time $transition-ease;
   -o-transition: background-color $transition-time $transition-ease,
-    color $transition-time $transition-ease;
+  color $transition-time $transition-ease;
   transition: background-color $transition-time $transition-ease,
-    color $transition-time $transition-ease;
+  color $transition-time $transition-ease;
 }
 
 @mixin lys-transition($args) {
@@ -74,20 +115,20 @@ $easeQuintOut: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @mixin animation-delay($args) {
-   -webkit-animation-delay: $args;
-   -moz-animation-delay: $args;
-   -ms-animation-delay: $args;
-   -o-animation-delay: $args;
-   animation-delay: $args;
- }
+  -webkit-animation-delay: $args;
+  -moz-animation-delay: $args;
+  -ms-animation-delay: $args;
+  -o-animation-delay: $args;
+  animation-delay: $args;
+}
 
- @mixin animation-fill-mode($args) {
-   -webkit-animation-fill-mode: $args;
-   -moz-animation-fill-mode: $args;
-   -ms-animation-fill-mode: $args;
-   -o-animation-fill-mode: $args;
-   animation-fill-mode: $args;
- }
+@mixin animation-fill-mode($args) {
+  -webkit-animation-fill-mode: $args;
+  -moz-animation-fill-mode: $args;
+  -ms-animation-fill-mode: $args;
+  -o-animation-fill-mode: $args;
+  animation-fill-mode: $args;
+}
 
 @mixin keyframes($animation_name) {
   @-webkit-keyframes #{$animation_name} {
@@ -151,10 +192,10 @@ $easeQuintOut: cubic-bezier(0.23, 1, 0.32, 1);
 
 @mixin image-2x($image, $width, $height) {
   @media (min--moz-device-pixel-ratio: 1.3),
-    (-o-min-device-pixel-ratio: 2.6/2),
-    (-webkit-min-device-pixel-ratio: 1.3),
-    (min-device-pixel-ratio: 1.3),
-    (min-resolution: 1.3dppx) {
+  (-o-min-device-pixel-ratio: 2.6/2),
+  (-webkit-min-device-pixel-ratio: 1.3),
+  (min-device-pixel-ratio: 1.3),
+  (min-resolution: 1.3dppx) {
     /* on retina, use image that's scaled by 2 */
     background-image: url($image);
     background-size: $width $height;
@@ -166,7 +207,8 @@ $easeQuintOut: cubic-bezier(0.23, 1, 0.32, 1);
 ==================== */
 
 @mixin box-shadow {
-  box-shadow: 4px 4px 4px -2px rgba(0, 0, 0, 0.08);
+  //box-shadow: 4px 4px 4px -2px rgba(0, 0, 0, 0.08);
+  box-shadow: rgba(0, 0, 0, 0.08) 0 4px 10px, rgba(0, 0, 0, 0.04) 0 1px 3px;
 }
 
 @mixin box-shadow-expanded($args...) {

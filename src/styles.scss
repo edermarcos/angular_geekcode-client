@@ -1,29 +1,21 @@
 /* ==================
+	  Utils
+==================== */
+@import 'assets/utils/utils';
+
+/* ==================
 		Reset
 ==================== */
 @import '/assets/base/reset';
+
+/* ==================
+	  Utils
+==================== */
+@import 'assets/components/components';
 
 /* ==================
 	  Bootstrap
 ==================== */
 @import '~bootstrap/scss/bootstrap';
 
-/* ==================
-	  Variables
-==================== */
-@import 'assets/utils/variables';
 
-/* ==================
-       Mixins
-==================== */
-@import 'assets/utils/mixins';
-
-/* ==================
-    Simplebar
-==================== */
-@import 'assets/vendors/vendors';
-
-/* ==================
-	  Components
-==================== */
-@import 'assets/components/components';

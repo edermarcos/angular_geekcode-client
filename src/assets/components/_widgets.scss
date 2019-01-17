@@ -1,0 +1,27 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.rs-w {
+  @include box-shadow();
+  background: white;
+  padding: 1rem;
+
+  &_header {
+    border-bottom: 1px solid rgba($gray-300, 0.5);
+    padding-bottom: 1rem;
+
+    h3 {
+      text-transform: capitalize;
+      font-size: 0.9rem;
+    }
+  }
+
+  &_main {
+    padding-top: 1rem;
+    font-size: 0.8rem;
+  }
+
+  &_footer {
+
+  }
+}

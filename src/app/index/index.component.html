@@ -1,3 +1,85 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div class="rs-index">
+  <div class="rs-index_header">
+    <div class="container-fluid d-none d-lg-block">
+      <div class="row">
+        <div class="col-lg-4 p-0"></div>
+        <div class="col-lg-4 px-0 py-3">
+          <div class="rs-index_header_searchbar">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" placeholder="Search for people, jobs, companies and more...">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 pl-0 pr-4 py-3">
+          <div class="rs-index_header_profile">
+            <i class="icon-bubble"></i>
+            <i class="icon-bell"></i>
+            <img src="https://picsum.photos/32/32"
+                 alt="Image Profile">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container rs-index_header_menu">
+      <div class="row">
+        <div class="col px-0">
+          <nav class="navbar navbar-expand-lg navbar-light px-lg-0">
+            <button class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#nb-menu"
+                    aria-controls="nb-menu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nb-menu">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <div class="d-flex align-items-center">
+                    <i class="icon-home"></i>
+                    <a class="nav-link">Home</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="d-flex align-items-center">
+                    <i class="icon-user"></i>
+                    <a class="nav-link">Profile</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="d-flex align-items-center">
+                    <i class="icon-home"></i>
+                    <a class="nav-link">Connections</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="d-flex align-items-center">
+                    <i class="icon-home"></i>
+                    <a class="nav-link">Jobs</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="d-flex align-items-center">
+                    <i class="icon-home"></i>
+                    <a class="nav-link">Interests</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rs-index_main">
+    <div class="container">
+      <div class="row">
+        <div class="col px-lg-0">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rs-index_footer"></div>
+</div>

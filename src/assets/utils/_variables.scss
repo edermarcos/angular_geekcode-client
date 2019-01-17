@@ -3,27 +3,22 @@
 ==================== */
 
 $font-ui: 'Open Sans', sans-serif;
-$font-ui-header: 'Fira Sans Condensed';
 
 /* ==================
 	Color Palette
 ==================== */
 
-$accent-100: #ffcdd2;
-$accent-200: #f6685e;
-$accent-400: #FF5253;
-$accent-700: #aa2e25;
+$accent: #0becb1;
+$accent-light: #6affe3;
+$accent-dark: #00b881;
 
-$ui-900: #0A0C14;
-$ui-800: #1C233A;
-$ui-700: #252E4E;
-$ui-600: #4A5C9B;
-$ui-500: #657ed4;
-$ui-400: #8FA1DF;
-$ui-300: #ABB8E7;
-$ui-200: #E0E5F6;
+$ui-primary: #0677ef;
+$ui-light: #29ACEC;
+$ui-dark: #004cbc;
+
 $ui-100: #EFF2FA;
 $ui-50: #F9FAFD;
+
 
 $gray-900: #212121;
 $gray-800: #525252;
@@ -59,8 +54,4 @@ $normal--light: rgba(255,255,255,1);
 $disabled: rgba(0,0,0,0.38);
 $disabled--light: rgba(255,255,255,0.54);
 
-$mh-lg: 80vh;
-$mh-md: 60vh;
-$mh-sm: 40vh;
-$mh-svg: 8rem;
-$mh-input: 3.5rem;
+$nb-image: 2rem;

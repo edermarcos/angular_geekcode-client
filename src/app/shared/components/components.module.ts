@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
-
-import { AppFooterComponent } from './app-footer/app-footer.component';
-import { AppHeaderComponent } from './app-header/app-header.component';
-
+import { CommonModule } from '@angular/common';
+import { AppPeopleComponent } from './app-people/app-people.component';
+import { AppRecomendationsComponent } from './app-recomendations/app-recomendations.component';
 
 @NgModule({
-  declarations: [
-    AppHeaderComponent,
-    AppFooterComponent,
+  declarations: [AppPeopleComponent, AppRecomendationsComponent],
+  imports: [
+    CommonModule
   ],
-  exports: [
-    AppHeaderComponent,
-    AppFooterComponent,
-  ]
+  exports: []
 })
 export class ComponentsModule { }
