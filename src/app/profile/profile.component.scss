@@ -1,0 +1,120 @@
+@import '../../assets/utils/variables';
+@import '../../assets/utils/mixins';
+
+.rs-profile {
+  &_header {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-direction(column);
+    position: relative;
+    height: 425px;
+    max-height: 425px;
+    min-height: 425px;
+    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+
+    &_bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      background-color: $gray-900;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      filter: brightness(50%);
+    }
+
+    &_img,
+    &_information {
+      margin-bottom: 2rem;
+    }
+
+    &_metadata,
+    &_options {
+      margin-bottom: 1rem;
+    }
+
+    &_img {
+      @include image-round(6rem, 0);
+      background-color: $ui-50;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &_information {
+      h2 {
+        font-size: 1.1rem;
+        line-height: 1rem;
+      }
+
+      span {
+        font-size: 0.8rem;
+        color: $gray-400;
+        font-weight: 600;
+      }
+    }
+
+    &_metadata {
+      @include flexbox();
+
+      &-left,
+      &-center,
+      &-right {
+        padding: 0.5rem 2.5rem;
+        border-top: 1px solid rgba($gray-500, 0.5);
+
+        p {
+          font-size: 0.65rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: $gray-400;
+        }
+      }
+
+      &-center {
+        border-left: 1px solid rgba($gray-500, 0.5);
+        border-right: 1px solid rgba($gray-500, 0.5);
+      }
+    }
+
+    &_options {
+      @include flexbox();
+
+      &_button {
+        @include static(2.5rem);
+        @include lys-transition(background);
+        margin: 0 0.5rem;
+        line-height: 2.5rem;
+        text-align: center;
+        border-radius: 50%;
+        background: $ui-50;
+        font-size: 1.1rem;
+        cursor: pointer;
+        color: $normal;
+
+        &:hover {
+          background: $ui-primary;
+          color: $ui-50;
+        }
+      }
+    }
+  }
+
+  &_main {
+    &_item {
+      @include flexbox();
+
+      img {
+        @include image-round(2.5rem, 0.5rem);
+      }
+    }
+  }
+
+  &_footer {}
+}

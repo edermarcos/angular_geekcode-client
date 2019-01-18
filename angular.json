@@ -27,7 +27,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/simple-line-icons/css/simple-line-icons.css",
               "src/styles.scss"
             ],
             "scripts": []

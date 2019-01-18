@@ -4,20 +4,21 @@
 .rs-w {
   @include box-shadow();
   background: white;
-  padding: 1rem;
+  padding: 1rem 0;
 
   &_header {
-    border-bottom: 1px solid rgba($gray-300, 0.5);
+    border-bottom: 1px solid rgba($gray-400, 0.5);
+    margin: 0 1rem;
     padding-bottom: 1rem;
 
     h3 {
       text-transform: capitalize;
       font-size: 0.9rem;
+      color: $emphasis;
     }
   }
 
   &_main {
-    padding-top: 1rem;
     font-size: 0.8rem;
   }
 

@@ -39,6 +39,16 @@
   overflow: hidden;
 }
 
+@mixin static($size) {
+  overflow: hidden;
+  width: $size;
+  max-width: $size;
+  min-width: $size;
+  height: $size;
+  max-height: $size;
+  min-height: $size;
+}
+
 /* ==================
 	  Transforms
 ==================== */

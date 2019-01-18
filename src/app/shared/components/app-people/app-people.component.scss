@@ -1,0 +1,36 @@
+@import '../../../../assets/utils/variables';
+@import '../../../../assets/utils/mixins';
+
+.mt-w-people {
+  &_main {
+    padding-top: 1rem;
+
+    &_item {
+      @include flexbox();
+      @include align-items(center);
+      padding: 1rem;
+
+      img {
+        @include image-round(3rem, 1rem);
+      }
+
+      span {
+        color: $emphasis;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+
+      p {
+        color: $gray-600;
+        line-height: 0.9rem;
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+
+      &:hover {
+        background: rgba($gray-200, 0.5);
+        cursor: pointer;
+      }
+    }
+  }
+}

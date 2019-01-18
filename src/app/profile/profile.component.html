@@ -1,0 +1,50 @@
+<div class="rs-profile">
+  <div class="rs-profile_header">
+    <div class="rs-profile_header_bg"
+         [ngStyle]="{ 'background-image': 'url(https://picsum.photos/1280/720?image=1055)'}"></div>
+    <div class="rs-profile_header_img"
+         [ngStyle]="{ 'background-image': 'url(https://picsum.photos/80?image=6)'}"></div>
+    <div class="rs-profile_header_information">
+      <h2>Eder Marcos</h2>
+      <span>Developer at MTech Systems</span>
+    </div>
+    <div class="rs-profile_header_metadata">
+      <div class="rs-profile_header_metadata-left">
+        <span>5055</span>
+        <p>People views</p>
+      </div>
+      <div class="rs-profile_header_metadata-center">
+        <span>16</span>
+        <p>projects</p>
+      </div>
+      <div class="rs-profile_header_metadata-right">
+        <span>100+</span>
+        <p>friends</p>
+      </div>
+    </div>
+    <div class="rs-profile_header_options">
+      <div class="rs-profile_header_options_button">
+        <i class="far fa-comment-dots"></i>
+      </div>
+      <div class="rs-profile_header_options_button">
+        <i class="fas fa-ellipsis-h"></i>
+      </div>
+      <div class="rs-profile_header_options_button">
+        <i class="far fa-comment-dots"></i>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 pl-lg-0 pr-lg-2">
+        <app-w-about></app-w-about>
+      </div>
+      <div class="col-lg-6 px-2">
+        <app-w-main></app-w-main>
+      </div>
+      <div class="col-lg-3 pl-lg-2 pr-lg-0">
+        <app-w-people></app-w-people>
+      </div>
+    </div>
+  </div>
+</div>

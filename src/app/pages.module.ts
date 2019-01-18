@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuardService } from './shared/services/auth-guard.service';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { ComponentsModule } from './shared/components/components.module';
+import { CommonModule } from '@angular/common';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -11,9 +13,9 @@ const routes: Routes = [
     // canActivate: [ AuthGuardService ],
     component: HomeComponent
   }, {
-    path: 'about',
+    path: 'profile',
     // canActivate: [ AuthGuardService ],
-    component: AboutComponent
+    component: ProfileComponent
   }, {
     path: '**',
     pathMatch: 'full',
@@ -24,15 +26,16 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     HomeComponent,
-    AboutComponent
+    ProfileComponent,
   ],
   imports: [
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ComponentsModule,
+    CommonModule
   ],
   exports: [
     RouterModule,
     HomeComponent,
-    AboutComponent
   ]
 })
 export class PagesModule { }

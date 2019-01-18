@@ -1,0 +1,28 @@
+@import '../../../../assets/utils/variables';
+@import '../../../../assets/utils/mixins';
+
+.mt-w-main {
+  &_item {
+    padding: 1rem;
+
+    span,
+    p {
+      font-weight: 600;
+    }
+
+    span {
+      display: block;
+      color: $gray-600;
+      line-height: 0.9rem;
+      font-size: 0.7rem;
+    }
+
+    p {
+      color: $emphasis;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}

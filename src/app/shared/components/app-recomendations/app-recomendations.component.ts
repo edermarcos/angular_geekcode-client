@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-app-recomendations',
+  selector: 'app-w-recomendations',
   templateUrl: './app-recomendations.component.html',
   styleUrls: ['./app-recomendations.component.scss']
 })
