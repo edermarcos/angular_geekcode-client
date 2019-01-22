@@ -1,0 +1,53 @@
+@import '../../../../assets/utils/variables';
+@import '../../../../assets/utils/mixins';
+
+.app-w-sugguestions {
+  margin-bottom: 1rem;
+
+  &_main {
+    padding-top: 1rem;
+  }
+
+  &_item {
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+    position: relative;
+    padding: 1rem;
+    border-bottom: 1px solid rgba($gray-400, 0.5);
+
+    img {
+      @include image-round(2rem, 0.5rem);
+    }
+
+    span {
+      color: $emphasis;
+      font-weight: 600;
+      font-size: 0.775rem;
+    }
+
+    p {
+      color: $gray-600;
+      line-height: 0.9rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+    }
+
+    &_btn-add {
+      @include image-round(1.5rem, 0);
+      text-align: center;
+      line-height: 1.5rem;
+      background: $ui-primary;
+      color: $ui-50;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:hover {
+      background: rgba($gray-200, 0.5);
+      cursor: pointer;
+    }
+  }
+}

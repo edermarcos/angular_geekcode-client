@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-app-today',
+  selector: 'app-w-today',
   templateUrl: './app-today.component.html',
   styleUrls: ['./app-today.component.scss']
 })
