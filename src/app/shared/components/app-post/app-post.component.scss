@@ -1,0 +1,87 @@
+@import '../../../../assets/utils/variables';
+@import '../../../../assets/utils/mixins';
+
+.app-w-post {
+  position: relative;
+  margin-bottom: 1rem;
+
+  &_header {
+    @include flexbox();
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    &_img-profile {
+      @include image-round(2rem, 0.5rem);
+    }
+
+    &_data {
+      font-size: 0.775rem;
+      color: $gray-700;
+
+      .username,
+      .action {
+        font-weight: 600;
+      }
+
+      .username {
+        font-size: 0.875rem;
+        color: $emphasis;
+      }
+
+      .action {
+        color: $ui-primary;
+      }
+    }
+  }
+
+  &_main {
+    padding: 1rem;
+    min-height: 100px;
+
+    &_actions {
+      $icon-size: 2rem;
+
+      position: absolute;
+      top: 1rem;
+      right: -($icon-size/2);
+
+      .rs-icon {
+        @include image-round($icon-size, 0);
+        @include lys-transition(background);
+        line-height: $icon-size;
+        text-align: center;
+        background: $gray-600;
+        color: $ui-50;
+        margin-bottom: 0.25rem;
+
+        &:hover {
+          background: $ui-primary;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &_footer {
+    @include flexbox();
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-top: 1px solid rgba($gray-400, 0.5);
+
+    .rs-stats {
+      @include flexbox();
+      @include align-items(center);
+      margin-right: 1rem;
+
+      span {
+        font-size: 0.65rem;
+        font-weight: 600;
+      }
+
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

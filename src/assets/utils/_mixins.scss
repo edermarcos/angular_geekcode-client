@@ -4,8 +4,10 @@
 @mixin image-round($size, $mr) {
   border-radius: 50%;
   max-height: $size;
+  min-height: $size;
   height: $size;
   max-width: $size;
+  min-width: $size;
   width: $size;
   margin-right: $mr;
 }

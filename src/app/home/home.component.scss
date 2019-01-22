@@ -1,0 +1,33 @@
+@import '../../assets/utils/variables';
+@import '../../assets/utils/mixins';
+
+.rs-home {
+  .publish-w {
+    &_main {
+      @include flexbox();
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      .img {
+        @include image-round(2rem, 0);
+      }
+
+      textarea {
+        font-size: 0.875rem;
+        border: none;
+        resize: none;
+        padding-top: 0;
+      }
+    }
+
+    &_footer {
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(space-between);
+      padding-top: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-top: 1px solid rgba($gray-400, 0.5);
+    }
+  }
+}
