@@ -9,6 +9,7 @@ import { AppSuggestionsComponent } from './app-suggestions/app-suggestions.compo
 import { AppActivityFeedComponent } from './app-activity-feed/app-activity-feed.component';
 import { AppTodayComponent } from './app-today/app-today.component';
 import { AppWeatherComponent } from './app-weather/app-weather.component';
+import { AppPagesLikeComponent } from './app-pages-like/app-pages-like.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AppWeatherComponent } from './app-weather/app-weather.component';
     AppSuggestionsComponent,
     AppActivityFeedComponent,
     AppTodayComponent,
-    AppWeatherComponent
+    AppWeatherComponent,
+    AppPagesLikeComponent
   ],
   imports: [
     CommonModule
@@ -34,7 +36,8 @@ import { AppWeatherComponent } from './app-weather/app-weather.component';
     AppSuggestionsComponent,
     AppActivityFeedComponent,
     AppTodayComponent,
-    AppWeatherComponent
+    AppWeatherComponent,
+    AppPagesLikeComponent
   ]
 })
 export class ComponentsModule { }

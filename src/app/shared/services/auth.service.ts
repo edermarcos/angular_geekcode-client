@@ -14,13 +14,13 @@ export class AuthService {
     private readonly storage: StorageService) {
   }
 
-  public auth(username: string, password: string, access_token: string) {
+  public async auth(username: string, password: string, access_token: string) {
     const headers = new HttpHeaders({
       'Authorization': `Basic ${ btoa(`${ username }:${ password }`) }`,
       'Content-Type': 'application/json',
     });
     const body = JSON.stringify({ access_token });
-    return this.http
+    return await this.http
       .post(`${ config.api }/auth`, body, { headers });
   }
 

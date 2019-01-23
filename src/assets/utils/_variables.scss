@@ -8,17 +8,21 @@ $font-ui: 'Open Sans', sans-serif;
 	Color Palette
 ==================== */
 
-$accent: #0becb1;
-$accent-light: #6affe3;
-$accent-dark: #00b881;
+$accent: #00CBFF;
+$accent-light: lighten($accent, 15%);
+$accent-dark: darken($accent, 15%);
+$accent-lighter: lighten($accent, 30%);
+$accent-darker: darken($accent, 30%);
 
-$ui-primary: #0677ef;
-$ui-light: #29ACEC;
-$ui-dark: #004cbc;
+
+$ui-primary: #007BDF;
+$ui-primary-light: lighten($ui-primary, 15%);
+$ui-primary-dark: darken($ui-primary, 15%);
+$ui-primary-lighter: lighten($ui-primary, 30%);
+$ui-primary-darker: darken($ui-primary, 30%);
 
 $ui-100: #EFF2FA;
 $ui-50: #F9FAFD;
-
 
 $gray-900: #212121;
 $gray-800: #525252;
@@ -49,7 +53,7 @@ $warning-100: #FAF5EC;
 $border: $gray-300;
 
 $emphasis: rgba(0,0,0,0.87);
-$normal: rgba(0,0,0,0.60);
+$normal: rgba(0,0,0,0.70);
 $normal--light: rgba(255,255,255,1);
 $disabled: rgba(0,0,0,0.38);
 $disabled--light: rgba(255,255,255,0.54);
