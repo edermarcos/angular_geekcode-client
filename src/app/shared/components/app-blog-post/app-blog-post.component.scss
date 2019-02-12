@@ -1,0 +1,40 @@
+@import '../../../../assets/utils/variables';
+@import '../../../../assets/utils/mixins';
+
+.app-w-blog {
+  margin-bottom: 1rem;
+
+  &_main {
+
+
+    &_item {
+      padding: 1rem;
+      border-bottom: 1px solid rgba($gray-400, 0.5);
+
+      &_title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+
+        &:hover {
+          cursor: pointer;
+          color: $ui-primary;
+        }
+      }
+
+      &_description {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      &_date {
+        font-size: 0.65rem;
+        color: $gray-600;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

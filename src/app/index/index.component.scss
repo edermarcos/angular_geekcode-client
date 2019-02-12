@@ -86,7 +86,7 @@
       @include justify-content(flex-end);
 
       &_icon {
-        @include static(2rem);
+        @include wh(2rem);
         @include lys-transition(background);
         line-height: 2rem;
         text-align: center;

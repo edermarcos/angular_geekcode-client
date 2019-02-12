@@ -1,0 +1,68 @@
+@import '../../assets/utils/variables';
+@import '../../assets/utils/mixins';
+
+.rs-friends {
+  &_cards {
+    margin-bottom: 1rem;
+
+    &_item {
+      @include box-shadow();
+      background-color: white;
+
+      &_header {
+        position: relative;
+        height: 115px;
+        background-color: $gray-600;
+
+        &_profile {
+          @include image-round(100px, 0);
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -50px;
+          background-color: $gray-400;
+          margin: 0 auto;
+        }
+      }
+
+      &_main {
+        margin-top: calc(50px + 1rem);
+
+        h3 {
+          font-size: 1.1rem;
+          font-weight: 600;
+          text-align: center;
+        }
+
+        span {
+          display: block;
+          text-align: center;
+          font-size: 0.75rem;
+          color: $gray-700;
+        }
+
+        &_data {
+          @include flexbox();
+          @include justify-content(space-around);
+          margin-top: 1rem;
+          padding-bottom: 1rem;
+
+          div {
+            text-align: center;
+            color: $emphasis;
+            font-weight: 600;
+
+            span {
+              color: $gray-600;
+            }
+          }
+        }
+
+        &_excerpt {
+          padding: 0 1rem 1rem 1rem;
+          font-size: 0.775rem;
+        }
+      }
+    }
+  }
+}

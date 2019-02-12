@@ -53,9 +53,11 @@
         line-height: 1rem;
       }
 
-      span {
+      p, span {
         font-size: 0.8rem;
-        color: $gray-400;
+      }
+
+      span {
         font-weight: 600;
       }
     }
@@ -87,7 +89,7 @@
       @include flexbox();
 
       &_button {
-        @include static(2.5rem);
+        @include wh(2.5rem);
         @include lys-transition(background);
         margin: 0 0.5rem;
         line-height: 2.5rem;
@@ -117,4 +119,56 @@
   }
 
   &_footer {}
+
+  &_friends {
+    margin-bottom: 1rem;
+
+    &_main {
+      @include flexbox();
+      @include flex-wrap(wrap);
+      width: 100%;
+      padding: 1rem 1rem 0;
+
+      .rs-container {
+        flex: none;
+        width: calc(100% / 7);
+        margin-bottom: 0.25rem;
+
+        &-image {
+          @include bg-image(cover);
+          @include image-round(2rem, 0);
+          margin: auto;
+          background-color: $ui-primary;
+          text-align: center;
+          color: white;
+          line-height: 2rem;
+          font-size: 0.575rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &_photos {
+    margin-bottom: 1rem;
+
+    &_main {
+      @include flexbox();
+      @include flex-wrap(wrap);
+      width: 100%;
+      padding: 1rem 1rem 0;
+
+      .rs-container-photos {
+        flex: none;
+        width: calc(100% / 4);
+        margin-bottom: 0.25rem;
+
+        &-image {
+          @include bg-image(cover);
+          @include wh(3.5rem);
+          margin: auto;
+        }
+      }
+    }
+  }
 }

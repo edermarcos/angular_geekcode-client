@@ -1,6 +1,17 @@
 /* ==================
 	 Utils
 ==================== */
+@mixin linear-gradient($color, $accent, $direction) {
+  background: rgba($color, 1);
+  background: -moz-linear-gradient(top, rgba($color, 1) 0%, rgba($accent, 1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba($color, 1)), color-stop(100%, rgba($accent, 1)));
+  background: -webkit-linear-gradient(top, rgba($color, 1) 0%, rgba($accent, 1) 100%);
+  background: -o-linear-gradient(top, rgba($color, 1) 0%, rgba($accent, 1) 100%);
+  background: -ms-linear-gradient(top, rgba($color, 1) 0%, rgba($accent, 1) 100%);
+  background: linear-gradient(to $direction, rgba($color, 1) 0%, rgba($accent, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0677ef', endColorstr='#0becb1', GradientType=0 );
+}
+
 @mixin image-round($size, $mr) {
   border-radius: 50%;
   max-height: $size;
@@ -27,21 +38,28 @@
   max-height: $line-height;
 }
 
-@mixin bg-size($size) {
+@mixin bg-image($size) {
   -webkit-background-size: $size;
   -moz-background-size: $size;
   -o-background-size: $size;
   background-size: $size;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-@mixin static-width($size) {
+@mixin height($size) {
+  height: $size;
+  max-height: $size;
+  min-height: $size;
+}
+
+@mixin width($size) {
   width: $size;
   max-width: $size;
   min-width: $size;
-  overflow: hidden;
 }
 
-@mixin static($size) {
+@mixin wh($size) {
   overflow: hidden;
   width: $size;
   max-width: $size;

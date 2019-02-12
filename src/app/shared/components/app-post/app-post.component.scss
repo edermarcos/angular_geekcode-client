@@ -38,6 +38,18 @@
     padding: 1rem;
     min-height: 100px;
 
+    &_image {
+      @include bg-image(cover);
+      height: 250px;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
     &_actions {
       $icon-size: 2rem;
 
@@ -81,6 +93,56 @@
 
       i {
         margin-right: 0.5rem;
+      }
+
+      .friends {
+        $profile-height: 2.25rem;
+        @include flexbox();
+        @include align-items(center);
+        position: relative;
+        width: calc(#{ $profile-height / 2 } * 6);
+        margin-right: 0.5rem;
+
+        &_profile {
+          @include image-round($profile-height, 0);
+          position: absolute;
+          background-color: $ui-primary-darker;
+          border: 1px solid white;
+
+          &.two {
+            left: calc((#{ $profile-height } / 2) - 2px);
+          }
+
+          &.three {
+            left: calc(#{ $profile-height } - 2px);
+          }
+
+          &.four {
+            left: calc((#{ $profile-height } * 1.5) - 2px);
+          }
+
+          &.five {
+            left: calc((#{ $profile-height } * 2) - 2px);
+          }
+        }
+      }
+
+      .names-people-likes {
+        font-size: 0.7rem;
+        color: $gray-700;
+
+        a {
+          color: $emphasis;
+          font-weight: 600;
+
+          &:last-child {
+            margin-left: 0.25rem;
+          }
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
