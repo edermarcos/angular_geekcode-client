@@ -6,15 +6,15 @@ A brief description of what this project does and who it's for
 
 ## Screenshots
 
-![](https://raw.githubusercontent.com/edermarcos/angular_geekcode-client/master/src/assets/images/docs/Screenshot%202022-04-15%20184044.jpg?token=GHSAT0AAAAAABPOLHYKC43AICGR2M7GLU62YS2AUUA)
+![](https://i.imgur.com/Vbm11hA.jpg)
 
-![](https://raw.githubusercontent.com/edermarcos/angular_geekcode-client/master/src/assets/images/docs/Screenshot%202022-04-15%20184108.jpg?token=GHSAT0AAAAAABPOLHYKWFKUIBGP7LZOYOGEYS2AUWA)
+![](https://i.imgur.com/tVjhX3a.jpg)
 
-![](https://raw.githubusercontent.com/edermarcos/angular_geekcode-client/master/src/assets/images/docs/Screenshot%202022-04-15%20184126.jpg?token=GHSAT0AAAAAABPOLHYKZK52EGE7UFWMO4FEYS2AUYA)
+![](https://i.imgur.com/paJ1mU2.jpg)
 
-![](https://raw.githubusercontent.com/edermarcos/angular_geekcode-client/master/src/assets/images/docs/Screenshot%202022-04-15%20184139.jpg?token=GHSAT0AAAAAABPOLHYK3PN7PDACMLMLPI5YYS2AU2A)
+![](https://i.imgur.com/wrcK8yF.jpg)
 
-![](https://raw.githubusercontent.com/edermarcos/angular_geekcode-client/master/src/assets/images/docs/Screenshot%202022-04-15%20184206.jpg?token=GHSAT0AAAAAABPOLHYLTGRBNJYZTFXLHPZGYS2AU4Q)
+![](https://i.imgur.com/oan1M9j.jpg)
 
 
 ## Tech Stack
